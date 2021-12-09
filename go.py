@@ -1,11 +1,10 @@
-#!/usr/bin/env python2.7
+#updated code from python2.7 to python3.8 compatible.
+
 # -*- coding: utf-8 -*-
-
-# Author: Alex Scheitlin
-
+# Orugunal Author: Alex Scheitlin
 # Starting screen for an implementation of the Go game using the MVC architecture
 
-from Tkinter import Tk, Label, Entry, Button, W, mainloop, StringVar
+from tkinter import Tk, Label, Entry, Button, W, mainloop, StringVar
 from controller import Controller
 
 

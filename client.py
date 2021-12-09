@@ -1,8 +1,8 @@
-#!/usr/bin/env python2.7
+#updated code from python2.7 to python3.8 compatible.
+#due to the error of a method of Sprite, changed 'set_position' to 'update' - 5 points
+
 # -*- coding: utf-8 -*-
-
-# Author: Alex Scheitlin & Nik Zaugg
-
+# Original Author: Alex Scheitlin & Nik Zaugg
 # View part of the MVC architecture for an implementation of the Go game
 
 import pyglet
@@ -179,7 +179,8 @@ class Window(pyglet.window.Window):
                            batch=self.batch, group=self.grp_label,
                            x=0, y=0)
         self.black_label_stone.scale = LITTLE_STONE_SIZE
-        self.black_label_stone.set_position(80, label_y + self.black_label_stone.height/4)
+        #self.black_label_stone.set_position(80, label_y + self.black_label_stone.height/4)
+        self.black_label_stone.update(80, label_y + self.black_label_stone.height/4)
 
         # SCORES WHITE PLAYER
         self.score_white = Label(x=170, y=label_y, text=str(self.data['score'][0]), color=label_text_color,
@@ -188,7 +189,8 @@ class Window(pyglet.window.Window):
                            batch=self.batch, group=self.grp_label,
                            x=0, y=0)
         self.white_label_stone.scale = LITTLE_STONE_SIZE
-        self.white_label_stone.set_position(150, label_y + self.white_label_stone.height/4)
+        #self.white_label_stone.set_position(150, label_y + self.white_label_stone.height/4)
+        self.white_label_stone.update(150, label_y + self.white_label_stone.height/4)
 
         # CURRENT PLAYER STONE
         self.player_color = Label(x=550, y=label_y, text="Your color: ", color=label_text_color,
@@ -199,7 +201,8 @@ class Window(pyglet.window.Window):
                            batch=self.batch, group=self.grp_label,
                            x=0, y=0)
         self.current_player_stone.scale = LITTLE_STONE_SIZE
-        self.current_player_stone.set_position(660, label_y + self.current_player_stone.height/4)
+        #self.current_player_stone.set_position(660, label_y + self.current_player_stone.height/4)
+        self.current_player_stone.update(660, label_y + self.current_player_stone.height/4)
 
         # Game Buttons  
         # Button that can be pressed to pass on current round
@@ -346,14 +349,16 @@ class Window(pyglet.window.Window):
                            batch=self.batch, group=self.grp_label,
                            x=0, y=0)
             self.current_player_stone.scale = LITTLE_STONE_SIZE
-            self.current_player_stone.set_position(660, 670 + self.current_player_stone.height/4)
+            #self.current_player_stone.set_position(660, 670 + self.current_player_stone.height/4)
+            self.current_player_stone.update(660, 670 + self.current_player_stone.height/4)
         # If its the WHITE players turn
         else:
             self.current_player_stone = Sprite(self.image_white_stone,
                            batch=self.batch, group=self.grp_label,
                            x=0, y=0)
             self.current_player_stone.scale = LITTLE_STONE_SIZE
-            self.current_player_stone.set_position(660, 670 + self.current_player_stone.height/4)
+            #self.current_player_stone.set_position(660, 670 + self.current_player_stone.height/4)
+            self.current_player_stone.update(660, 670 + self.current_player_stone.height/4)
 
 
     def on_draw(self):

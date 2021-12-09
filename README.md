@@ -6,5 +6,5 @@ We have implemented all game logic and a basic graphical user interface.
 Prerequisites:
 `pip install pyglet`
 
-To start a new game with python 2.7.*:
+To start a new game with python 3.8 or higher:
 `python go.py`
